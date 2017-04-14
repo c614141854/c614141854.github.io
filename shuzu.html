@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style type="text/css">
+			button{
+				height: 300px;
+				float: left;
+			}
+			img{
+				width: 600px;
+				height: 300px;
+				display: block;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<button>&lt;</button>
+		<div class="box">
+			<img src="img/1.jpg" />
+		</div>
+		<button>&gt;</button>
+	</body>
+	<script type="text/javascript">
+	window.onload=function(){
+		var btn_l=document.querySelectorAll('button')[0];
+		var btn_r=document.querySelectorAll('button')[1];
+		var imgs=document.querySelector('img')
+		var arr=["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"]
+		var num=0;
+		btn_r.onclick=function(){
+			num++
+			console.log(num)
+			if(num==5){
+				num=0
+			}
+			imgs.src=arr[num]
+		};	
+		
+		btn_l.onclick=function(){
+			console.log(num)
+			if(num<=0){
+				num=5
+			}
+			num--
+			imgs.src=arr[num]
+		}
+	}
+	
+		
+	</script>
+</html>
